@@ -351,11 +351,15 @@ aside ul li a:active aside {
     opacity: 0.8;
 }
 
-.hero-btn:visited, .resume:hover {
+.hero-btn:visited, .resume:visited {
     color: var(--green);
 }
 
 .hero-btn:active, .resume:active {
+    color: var(--green);
+}
+
+.hero-btn:focus, .resume:focus {
     color: var(--green);
 }
 
