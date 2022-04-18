@@ -695,7 +695,7 @@ aside ul li a:active aside {
   
   /**MEDIA QUERIES***/
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .nav-menu {
         justify-content: center;
     }
@@ -753,7 +753,7 @@ aside ul li a:active aside {
       display: block;
     }
 }
-@media only screen and (max-width: 528px) {
+@media (max-width: 528px) {
       nav ul li {
           margin: 0 5px;
       }
