@@ -61,5 +61,46 @@ function backToTop() {
 scrollBtn.addEventListener("click", backToTop);
 window.onscroll = function() {showScroll()};
 
+/*DARK MODE */
 
+let lightMode = localStorage.getItem("light-mode")
+const darkBtn = document.querySelector(".darkbtn");
+const body = document.getElementById("body");
+const modeCheckBox = document.getElementById("mode-checkbox");
 
+const enableLightMode = () => {
+  body.classList.add("light")
+  localStorage.setItem("light-mode", "enabled");
+};
+
+const disableLightMode = () => {
+  body.classList.remove("light")
+  localStorage.setItem("light-mode", "disabled");
+};
+
+if (lightMode === "enabled") {
+  enableLightMode();
+  modeCheckBox.checked = true;
+  console.log(modeCheckBox);
+};
+
+darkBtn.addEventListener("input", (e)=> {
+  let lightMode = localStorage.getItem("light-mode");
+  console.log(e.target);
+  if (lightMode !== "enabled" && e.target.checked === true) {
+      enableLightMode();
+  } else {
+      disableLightMode();
+  }
+});
+
+//////////////////////
+//HIDING GRADIENT HALF LENGHT BORDERS ON SAFARI. BC IT'S DISPLAYING LIKE SQARE//////////
+const borders = document.querySelectorAll(".project-container");
+
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+if (isSafari) {
+  console.log("first");
+  borders.forEach(border => border.style.setProperty("--hide", "none"));
+}

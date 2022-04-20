@@ -13,13 +13,13 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--gray);
-    border: 3px solid var(--dark);
+    background-color: var( --gray);
+    border: 3px solid var(--color-bg);
     border-radius: 10px;
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--dark);
+    background: var(--color-bg);
 }
 
 section {
@@ -37,20 +37,44 @@ section {
   --dark: #0a192f;
   --dark-2: #1b2a41;
   --dark-3: #112240;
-  --dark-shadow: rgba(2,12,27,0.7);
-  --primary: var(--dark);
-  --secondary: var(--gray);
-  --green: #64ffda;
-  --greentint: rgba(100,255,218,0.1);
-  --green2: #00C897;
   --gray: #8892b0;
   --light-gray: #a8b2d1;
   --lightest-gray: #ccd6f6;
+  --green: #64ffda;
+  --green2: #00C897;
+  --cream: #E5E4CC;
+  --myname: #00C897;
+  --heading-green: #219F94;
+  --grass: #A3DA8D;
+  --darktext: #083C5A;
+  --greenish: #c9d8b6;
+  --green-link: #1FAB89;
+  --green-container: #C9D8B6;
+  --green-container-text: #1C4648;
+  --img-overlay-dark: #0D625E;
+  --link-hover-green: rgb(0 200 151);
+  --dark-shadow: 0px 10px 30px -15px rgba(2,12,27,0.7);
+  --light-shadow: 0px 10px 15px -15px rgb(2 12 27 / 30%);
+  --primary: var(--dark);
+  --secondary: var(--gray);
+  --button: var(--green);
+  --button-text: var(--green);
+  --button-hover-bg: var(--greentint);
+  --button-hover-text: var(--green);
+  --button-border: var(--green);
+  --link: var(--green);
+  --hover: var(--green);
+  --greentint: rgba(100,255,218,0.1);
+  --img-overlay: var(--green2);
+  --title-bef-af: var(--green2);
+  --title-bef-af2: var(--grass);
   --color-bg: var(--dark);
-  --text-primary: var(--primary);
-  --text-secondary: var(--gray);
+  --color-bg-lighter: var(--dark-2);
+  --heading-primary: var(--lightest-gray);
+  --heading-secondary: var(--gray);
   --container-bg: var(--dark-3);
   --container-text-color: var(--light-gray);
+  --container-shadow: var(--dark-shadow);
   --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
   --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
   --font-xxs: 12px;
@@ -69,9 +93,34 @@ section {
   --transition-img: opacity 300ms linear 0s;
   --footer-height: 10vh;
 }
+body.light {
+    --color-bg: var(--cream);
+    --color-bg-lighter: #EDE6DB;
+    --heading-primary: var(--heading-green);
+    --heading-secondary: var(--grass);
+    --secondary: var(--darktext);
+    --title-bef-af: var(--title-bef-af2);
+    --container-bg: var(--green-container);
+    --container-text-color: var(--green-container-text);
+    --img-overlay: var(--img-overlay-dark);
+    --green: var(--green-link);
+    --hover: var(--green-link);
+    --button: var(--cream);
+    --button-text: var(--green2);
+    --button-border: #98bdba;
+    --button-hover-bg: rgb(33 159 148);
+    --button-hover-text: #E5E4CC;
+    --dark-shadow: var(--light-shadow);
+}
+body.light a, a:focus, a:visited {
+    color: var(--secondary);
+} 
 
+body.light .scroll-btn {
+    filter: invert(48%) sepia(62%) saturate(507%) hue-rotate(126deg) brightness(95%) contrast(88%);
+}
 body {
-  background-color: var(--dark);
+  background-color: var(--color-bg);
   transition: 400ms all;
   color: var(--secondary);
   font-family: var(--font-sans);
@@ -82,14 +131,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body.light {
-  --color-bg: var(--primary);
-  --text-primary: var(--dark: );
-  --text-secondary: var(--dark-2);
-  background-color: var(--primary);
-  --container-bg: var(--lightest-gray)
-}
-
 ul {
     text-decoration: none;
     list-style: none;
@@ -97,11 +138,11 @@ ul {
 
 a, a:focus, a:active, a:visited {
     text-decoration: none;
-    color: inherit;
+    color: var(--secondary);
 }
 
 a:hover {
-    color: var(--green)
+    color: var(--hover)!important;
 }
 
 /* click and select text background color */
@@ -110,20 +151,20 @@ a:hover {
     background: var(--gray);
 }
   
-  ::selection {
+::selection {
     color: rgb(245, 245, 245);
     background: var(--gray);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--lightest-gray);
+    color: var(--heading-primary);
 }
 .typing {
     opacity: 1;
     position: relative;
 }
 
-.typing::after{
+.typing::after {
     content: "";
     position: absolute;
     height: clamp(40px, 8vw, 80px);
@@ -153,7 +194,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     margin: 0 5%;
     width: calc(100vw - 10%);
-    
 }
 
 nav {
@@ -165,15 +205,16 @@ nav {
     font-family: var(--font-mono);
     box-shadow: 0px 30px -15px var(--dark-shadow);
     transform: translateY(0px);
-
 }
 
-.darkbtn {
-    display: none;
-    justify-content: flex-start;
+/* .darkbtn {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-start;
+    margin-right: auto;
     align-items: center;
-    margin-left: 5rem;
-}
+    margin-right: auto;
+} */
 
 .nav-menu {
     display: flex;
@@ -181,7 +222,6 @@ nav {
     align-items: center;
     flex-wrap: wrap-reverse;
     width: 100%;
-    
 }
 
 nav ul {
@@ -202,6 +242,7 @@ nav ul li {
     padding: 0.75rem 1rem;
 }
 nav a {
+    color: inherit;
     text-decoration: none;
 }
 .hamburger-menu .menu-icon {
@@ -253,7 +294,9 @@ nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--dark-2);
+    background-color: var(--color-bg-lighter);
+    -webkit-box-shadow: var(---dark-shadow);
+    box-shadow: var(---dark-shadow);
     z-index: 15;
     position: fixed;
     top: 0;
@@ -320,12 +363,12 @@ aside ul li a:active aside {
 }
 
 .hero h3 {
-    color: var(--gray);
+    color: var( --heading-secondary);
     z-index: -1;
 }
 
 .hero h3 span:nth-of-type(2) {
-    color: var(--gray);
+    color: var( --heading-secondary);
 }
 
 .big-heading {
@@ -337,30 +380,30 @@ aside ul li a:active aside {
     font-size: var(--font-sm);
 }
 .hero-btn, .resume {
-    color: var(--green);
+    color: var(--button-text)!important;
     font-family: var(--font-mono);
     background-color: transparent;
-    border: 1px solid var(--green);
+    border: 1px solid var(--button-border);
     border-radius: var(--border-radius);
     line-height: 1;
     text-decoration: none;
 }
 
 .hero-btn:hover, .resume:hover {
-    background-color: var(--greentint);
+    background-color: var(--button-hover-bg);
     opacity: 0.8;
+    color: var(--button-hover-text)!important;
 }
 
 .hero-btn:visited, .resume:visited {
-    color: var(--green);
+    color: var(--button);
 }
 
 .hero-btn:active, .resume:active {
-    color: var(--green);
+    color: var(--button);
 }
-
 .hero-btn:focus, .resume:focus {
-    color: var(--green);
+    color: var(--button);
 }
 
 .section-heading {
@@ -370,7 +413,7 @@ aside ul li a:active aside {
 
 .section-heading::before {
     font-family: var(--font-mono);
-    color: var(--green2);
+    color: var(--title-bef-af);
     counter-increment: section 1;
     content: "0" counter(section) ". "
 }
@@ -380,12 +423,12 @@ aside ul li a:active aside {
     width: 20%;
     vertical-align: middle;
     margin-left: 1rem;
-    border-top: 1px solid var(--green2);
+    border-top: 1px solid var(--title-bef-af);
     content: ""
 }
 .about-me a, .project-description a {
     position: relative;
-    color: var(--green);
+    color: var(--green)!important;
     text-decoration: none;
 }
 .about-me a::after, .project-description a::after {
@@ -405,7 +448,10 @@ aside ul li a:active aside {
 .about-me a:hover::after, .project-description a:hover::after {
     transform: scaleX(1);
 }
-
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+}
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -427,15 +473,18 @@ aside ul li a:active aside {
 .img-container {
     align-self: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    
 }
 
 .personal-img {
-    width: 100%;
     height: 100%;
     border-radius: var(--border-radius);
     max-width: 100%;
     max-height: auto;
-    min-width: 0;
 }
 
 .wrapper {
@@ -466,10 +515,11 @@ aside ul li a:active aside {
     /* border: 1px solid var(--green); */
     padding: 1rem;
     position: relative;
+    --hide: block;  /*for hide psudo corners on safari*/
 }
 
 .project-container::after {
-    display: block;
+    display: var(--hide);
     content: "";
     width: 25%;
     height: 50%;
@@ -477,31 +527,50 @@ aside ul li a:active aside {
     top: -10px;
     right: -10px;
     border-top: 2px solid;
+    -webkit-border-top:2px solid;
+    border-bottom: none;
+    -webkit-border-bottom: none;
     border-right: 2px solid;
+    -webkit-border-right:2px solid;
+    border-left: none;
+    -webkit-border-left: none;
     border-image-slice: 1;
+    -webkit-border-image-slice: 1;
     border-image-source: linear-gradient(90deg, rgba(0,125,200,1) 35%, rgba(100,255,218,1) 73%, rgba(0,200,151,1) 100%);
+    -webkit-border-image-source: linear-gradient(90deg, rgba(0,125,200,1) 35%, rgba(100,255,218,1) 73%, rgba(0,200,151,1) 100%);
     z-index: -1;
     /*you can use pointer-events:none or z-index to prevent clickable links */
 }
 
 .project-container::before {
-    display: block;
+    display: var(--hide);
     content: "";
     width: 25%;
     height: 50%;
     position: absolute;
     bottom: -10px;
     left: -10px;
+    border-top: none;
+    -webkit-border-top: none;
     border-bottom: 2px solid;
+    -webkit-border-bottom:2px solid;
     border-left: 2px solid;
+
+    -webkit-border-left:2px solid;
+    border-right: none;
+    -webkit-border-right: none;
     border-image-slice: 1;
+
+    -webkit-border-image-slice: 1;
     border-image-source: linear-gradient(90deg, rgba(0,200,151,1) 42%, rgba(100,255,218,1) 73%, rgba(0,125,200,1) 100%);
+    -webkit-border-image-source: linear-gradient(90deg, rgba(0,200,151,1) 42%, rgba(100,255,218,1) 73%, rgba(0,125,200,1) 100%);
     z-index: -1;
 }
 
 .project-container p {
     font-size: var(--font-lg)
 }
+
 .project-container img {
     height: 100%;
     width: 100%;
@@ -529,7 +598,7 @@ aside ul li a:active aside {
     opacity: var(--image-overlay-opacity);
     transition: var(--transition-img);
     overflow: hidden;
-    background: var(--green2);
+    background: var(--img-overlay);
 }
 
 .project-container:hover .project-image::before {
@@ -548,7 +617,7 @@ aside ul li a:active aside {
     font-size: var(--font-lg);
     background-color: var(--container-bg);
     border-radius: 4px;
-    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px ;
+    box-shadow: var(--dark-shadow);
     color: var(--container-text-color);
     padding: 25px;
     z-index: 4;
@@ -629,7 +698,7 @@ aside ul li a:active aside {
 }
 
 .mail-icon {
-    color: var(--lightest-gray);
+    color: var(--heading-primary);
 }
 .footer {
     display: flex;
@@ -654,26 +723,32 @@ aside ul li a:active aside {
     opacity: 0.8;
 }
 
-/* 
-.checkbox {
+
+.darkbtn .checkbox {
     opacity: 0;
     position: absolute;
-  }
-  
-  .label {
+}
+
+.darkbtn .label {
     width: 50px;
     height: 26px;
-    background-color: #111;
+    background-color: var(--dark);
+    -webkit-border: 1px solid var(--green);
+    -moz-border: 1px solid var(--green);
+    border: 1px solid var(--green);
     display: flex;
     border-radius: 50px;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
     position: relative;
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
     transform: scale(1.5);
-  }
+    margin-left: 1rem;
+}
   
-  .ball {
+.darkbtn .ball {
     width: 20px;
     height: 20px;
     background-color: white;
@@ -682,12 +757,12 @@ aside ul li a:active aside {
     left: 2px;
     border-radius: 50%;
     transition: transform 0.2s linear;
-  }
+}
 
   /*  target the elemenent after the label*/
-  /* .checkbox:checked + .label .ball {
+.darkbtn .checkbox:checked + .label .ball {
     transform: translateX(24px);
-  }
+}
   
   .fa-moon {
     color: pink;
@@ -695,7 +770,7 @@ aside ul li a:active aside {
   
   .fa-sun {
     color: yellow;
-  } */ 
+  }
   
   /**MEDIA QUERIES***/
 
@@ -710,15 +785,15 @@ aside ul li a:active aside {
     .hero, .flex-row {
         margin: 2rem;
     }
-    .wrapper::before {
+    /* .wrapper::before {
         margin-left: auto;
     }
     .personal-img {
         margin-right: auto;
-    }
-    .wrapper::before, .personal-img, .img-container::after {
+    } */
+    /* .wrapper::before, .personal-img, .img-container::after {
         width: 50%;
-    }
+    } */
     .project-container {
         flex-direction: column;
         justify-content: center;
@@ -756,13 +831,19 @@ aside ul li a:active aside {
     .hamburger-menu .menu-icon {
       display: block;
     }
+    .img-container, .wrapper, .personal-img {
+        width: 200px;
+      }
 }
 @media (max-width: 528px) {
       nav ul li {
-          margin: 0 5px;
+        margin: 0 5px;
       }
       .hero {
-          min-height: 100%;
+        min-height: 100%;
+      }
+       .img-container, .wrapper, .personal-img {
+        width: 180px;
       }
       .contact {
         width: 100%;
