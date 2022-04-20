@@ -5,30 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M495KG75CV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-M495KG75CV');
-    </script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(88427618, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/88427618" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
     <link rel="stylesheet" href="./src/styles.css">
     <script src="https://kit.fontawesome.com/4ef9a0b249.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,17 +13,17 @@
     <title>Sinan Şık</title>
 </head>
 
-<body>
+<body id="body">
 
 
     <div class="main-container">
         <header>
             <nav>
                 <div class="darkbtn">
-                    <input type="checkbox" class="checkbox" id="checkbox">
-                    <label for="checkbox" class="label">
-                        <i class="fas fa-moon"></i>
-                        <i class='fas fa-sun'></i>
+                    <input type="checkbox" class="checkbox" id="mode-checkbox">
+                    <label for="mode-checkbox" class="label">
+                        <i class='fas fa-sun fa-xs'></i>
+                        <i class="fas fa-moon fa-xs"></i>
                         <div class='ball'></div>
                     </label>
                 </div>
@@ -68,7 +44,7 @@
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <a class="resume" href="/resume.pdf" target="_blank">Resume</a>
+                    <a class="resume" href="./src/resume.pdf" target="_blank">Resume</a>
                 </aside>
               </div>
             </nav>
@@ -668,7 +644,7 @@
                 <i class="fa-solid fa-envelope-open fa-2x mail-icon"></i>
                 <h2>Get In Touch</h2>
                 <p>If you would like to collaborate or just want to say "Hello", I'll get back to you as soon as possible!</p>
-                <a class="hero-btn" href="mailto: sinan.sk@outlook.com.tr">Say Hello</a>
+                <a class="hero-btn" href="mailto: sinan.sk@outlook.com.tr">Email Me</a>
             </div>
         </section>
         <img class="scroll-btn" src="./src/images/up-arrow.png" alt="">
