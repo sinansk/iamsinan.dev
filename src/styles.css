@@ -49,7 +49,6 @@ section {
   --darktext: #083C5A;
   --greenish: #c9d8b6;
   --green-link: #1FAB89;
-  --green-container: #C9D8B6;
   --green-container-text: #1C4648;
   --img-overlay-dark: #0D625E;
   --link-hover-green: rgb(0 200 151);
@@ -95,12 +94,12 @@ section {
 }
 body.light {
     --color-bg: var(--cream);
-    --color-bg-lighter: #EDE6DB;
+    --color-bg-lighter: var(--greenish);
     --heading-primary: var(--heading-green);
     --heading-secondary: var(--grass);
     --secondary: var(--darktext);
     --title-bef-af: var(--title-bef-af2);
-    --container-bg: var(--green-container);
+    --container-bg: var(--greenish);
     --container-text-color: var(--green-container-text);
     --img-overlay: var(--img-overlay-dark);
     --green: var(--green-link);
@@ -112,13 +111,15 @@ body.light {
     --button-hover-text: #E5E4CC;
     --dark-shadow: var(--light-shadow);
 }
-body.light a, a:focus, a:visited {
-    color: var(--secondary);
+
+body.light a:hover {
+    color: var(--heading-secondary);
 } 
 
 body.light .scroll-btn {
     filter: invert(48%) sepia(62%) saturate(507%) hue-rotate(126deg) brightness(95%) contrast(88%);
 }
+
 body {
   background-color: var(--color-bg);
   transition: 400ms all;
@@ -138,11 +139,11 @@ ul {
 
 a, a:focus, a:active, a:visited {
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--heading-primary);
 }
 
 a:hover {
-    color: var(--hover)!important;
+    color: var(--hover);
 }
 
 /* click and select text background color */
@@ -785,15 +786,6 @@ aside ul li a:active aside {
     .hero, .flex-row {
         margin: 2rem;
     }
-    /* .wrapper::before {
-        margin-left: auto;
-    }
-    .personal-img {
-        margin-right: auto;
-    } */
-    /* .wrapper::before, .personal-img, .img-container::after {
-        width: 50%;
-    } */
     .project-container {
         flex-direction: column;
         justify-content: center;
