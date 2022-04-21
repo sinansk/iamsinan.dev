@@ -27,13 +27,12 @@ let letter = '';
 
 ///// ASIDE NAV////
 const asideMenu = document.querySelector(".hamburger-menu")
-const asideNav = document.querySelector("#aside-nav");
-const asideLinks = asideNav.querySelectorAll("a");
+const asideLinks = asideMenu.querySelectorAll("a");
 const hamburgerInput = document.querySelector(".menu-btn");
 
 function closeAside() {
   hamburgerInput.checked = false;
-}
+}  
 
 asideLinks.forEach(link => link.addEventListener("click", closeAside));
 window.addEventListener("click", (e) => {
@@ -110,3 +109,4 @@ if (isSafari) {
   console.log("first");
   borders.forEach(border => border.style.setProperty("--hide", "none"));
 }
+
