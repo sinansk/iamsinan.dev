@@ -25,17 +25,22 @@ let letter = '';
   setTimeout(type, 300);
 })();
 
-// CLOSE ASIDE NAV
+///// ASIDE NAV////
+const asideMenu = document.querySelector(".hamburger-menu")
 const asideNav = document.querySelector("#aside-nav");
-const asideIcon = document.querySelector(".hamburger-menu");
+const asideLinks = asideNav.querySelectorAll("a");
 const hamburgerInput = document.querySelector(".menu-btn");
 
-window.onclick = ({ target }) => {
-  if (
-    !(target === asideNav || target === asideIcon || target === hamburgerInput)
-  ) hamburgerInput.checked = false;
-};
+function closeAside() {
+  hamburgerInput.checked = false;
+}
 
+asideLinks.forEach(link => link.addEventListener("click", closeAside));
+window.addEventListener("click", (e) => {
+  if (!asideMenu.contains(e.target)) {
+    closeAside()
+  } 
+});
 
 /**SHOW SCROLL BUTTON**/
 const scrollBtn = document.querySelector(".scroll-btn");
@@ -99,8 +104,9 @@ darkBtn.addEventListener("input", (e)=> {
 //HIDING HALF LENGHT BORDERS AROUND PROJECTS, ON SAFARI. BC IT'S DISPLAYING LIKE SQARE//////////
 const borders = document.querySelectorAll(".project-container");
 
-var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 if (isSafari) {
+  console.log("first");
   borders.forEach(border => border.style.setProperty("--hide", "none"));
 }

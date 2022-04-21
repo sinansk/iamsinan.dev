@@ -94,7 +94,7 @@ section {
 }
 body.light {
     --color-bg: var(--cream);
-    --color-bg-lighter: var(--greenish);
+    --color-bg-lighter: #e0e0d2;
     --heading-primary: var(--heading-green);
     --heading-secondary: var(--grass);
     --secondary: var(--darktext);
