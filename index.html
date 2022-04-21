@@ -14,39 +14,40 @@
 </head>
 
 <body id="body">
+    <header>
+        <nav>
+            <div class="darkbtn">
+                <input type="checkbox" class="checkbox" id="mode-checkbox">
+                <label for="mode-checkbox" class="label">
+                    <i class='fas fa-sun fa-xs'></i>
+                    <i class="fas fa-moon fa-xs"></i>
+                    <div class='ball'></div>
+                </label>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a class="resume" href="https://github.com/sinansk/cv/blob/main/resume.pdf" target="_blank">Resume</a>
+          </div>
+          <div class="hamburger-menu">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <aside aria-hidden="true" id="aside-nav">
+                <ul class="aside-links">
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a class="resume" href="./src/resume.pdf" target="_blank">Resume</a>
+            </aside>
+          </div>
+        </nav>
+    </header>
     <div class="main-container">
-        <header>
-            <nav>
-                <div class="darkbtn">
-                    <input type="checkbox" class="checkbox" id="mode-checkbox">
-                    <label for="mode-checkbox" class="label">
-                        <i class='fas fa-sun fa-xs'></i>
-                        <i class="fas fa-moon fa-xs"></i>
-                        <div class='ball'></div>
-                    </label>
-                </div>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="#about-me">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                    <a class="resume" href="https://github.com/sinansk/cv/blob/main/resume.pdf" target="_blank">Resume</a>
-              </div>
-              <div class="hamburger-menu">
-                <input class="menu-btn" type="checkbox" id="menu-btn" />
-                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                <aside aria-hidden="true" id="aside-nav">
-                    <ul class="aside-links">
-                        <li><a href="#about-me">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                    <a class="resume" href="./src/resume.pdf" target="_blank">Resume</a>
-                </aside>
-              </div>
-            </nav>
-        </header>
+        
         <section class="hero">
             <p>Hi, my name is</p>
             <h2 class="big-heading">Sinan Şık.</h2>
