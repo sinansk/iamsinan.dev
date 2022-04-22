@@ -719,7 +719,7 @@ aside ul li a:active aside {
     display: none;
     position: fixed;
     right: 10px;
-    bottom: 30px;
+    bottom: calc(5vh - 10px);
     cursor: pointer;
     z-index: 10;
 }
