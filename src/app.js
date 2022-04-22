@@ -32,7 +32,17 @@ const hamburgerInput = document.querySelector(".menu-btn");
 
 function closeAside() {
   hamburgerInput.checked = false;
+  body.classList.remove("blur")
 }  
+
+function blur() {
+  if (hamburgerInput.checked === true) {
+    console.log("here");
+    body.classList.add("blur")
+  } else {
+    closeAside()
+  }
+};
 
 asideLinks.forEach(link => link.addEventListener("click", closeAside));
 window.addEventListener("click", (e) => {
@@ -40,7 +50,7 @@ window.addEventListener("click", (e) => {
     closeAside()
   } 
 });
-
+hamburgerInput.addEventListener("input", blur);
 /**SHOW SCROLL BUTTON**/
 const scrollBtn = document.querySelector(".scroll-btn");
 

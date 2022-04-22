@@ -130,6 +130,10 @@ body {
   overflow-x: hidden;
   counter-reset: section; /*for editing section numbers*/
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+body.blur {
+    overflow-y: hidden;
 }
 
 ul {
@@ -208,15 +212,6 @@ nav {
     width: 100vw;
     padding: 0 5%;
 }
-
-/* .darkbtn {
-    display: flex;
-    flex-direction: row;
-    justify-self: flex-start;
-    margin-right: auto;
-    align-items: center;
-    margin-right: auto;
-} */
 
 .nav-menu {
     display: flex;
@@ -304,7 +299,8 @@ nav a {
     bottom: 0;
     right: 0;
     height: 100vh;
-    width: min(50vw, 400px);
+    --aside-width: min(50vw, 400px);
+    width: var(--aside-width);
     transform: translateX(100vw);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     visibility: hidden;
@@ -330,6 +326,7 @@ aside ul li a:active aside {
     -ms-transform: translateX(0vw);
     -o-transform: translateX(0vw);
 }
+
 .hamburger-menu .menu-btn:checked ~ aside {
     visibility: visible;
     transform: translateX(0vw);
@@ -567,12 +564,10 @@ aside ul li a:active aside {
     border-bottom: 2px solid;
     -webkit-border-bottom:2px solid;
     border-left: 2px solid;
-
     -webkit-border-left:2px solid;
     border-right: none;
     -webkit-border-right: none;
     border-image-slice: 1;
-
     -webkit-border-image-slice: 1;
     border-image-source: linear-gradient(90deg, rgba(0,200,151,1) 42%, rgba(100,255,218,1) 73%, rgba(0,125,200,1) 100%);
     -webkit-border-image-source: linear-gradient(90deg, rgba(0,200,151,1) 42%, rgba(100,255,218,1) 73%, rgba(0,125,200,1) 100%);
