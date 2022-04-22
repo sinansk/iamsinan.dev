@@ -22,7 +22,7 @@ body::-webkit-scrollbar-track {
     background: var(--color-bg);
 }
 
-section {
+section:not(.projects, .contact-section) {
     margin-bottom: 10%;
 }
 *,
@@ -688,7 +688,7 @@ aside ul li a:active aside {
     height: calc(100vh - (var(--nav-height) - var(--footer-height)));
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     text-align: center;
 }
 .contact {
