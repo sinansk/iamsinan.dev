@@ -685,7 +685,7 @@ aside ul li a:active aside {
 }
 .contact-section {
     width: 100%;
-    height: calc(100vh - (var(--nav-height) - var(--footer-height)));
+    height: calc(100vh - var(--footer-height));
     display: flex;
     justify-content: center;
     align-items: center;
