@@ -134,7 +134,7 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
 }
-body.blur {
+body.lock-scroll {
     overflow-y: hidden;
 }
 
