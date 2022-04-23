@@ -74,6 +74,7 @@ section:not(.projects, .contact-section) {
   --container-bg: var(--dark-3);
   --container-text-color: var(--light-gray);
   --container-shadow: var(--dark-shadow);
+  --ball-color: white;
   --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
   --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
   --font-xxs: 12px;
@@ -110,6 +111,7 @@ body.light {
     --button-hover-bg: rgb(33 159 148);
     --button-hover-text: #E5E4CC;
     --dark-shadow: var(--light-shadow);
+    --ball-color: var(--heading-primary);
 }
 
 body.light a:hover {
@@ -346,6 +348,20 @@ aside ul li a:active aside {
 .hamburger-menu .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .hamburger-menu .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
+}
+
+.overlay-blur {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    visibility: hidden;
+    opacity: 1;
 }
 
 .hero {
@@ -756,7 +772,7 @@ aside ul li a:active aside {
 .darkbtn .ball {
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: var(--ball-color);
     position: absolute;
     top: 2px;
     left: 2px;
