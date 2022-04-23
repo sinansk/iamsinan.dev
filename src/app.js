@@ -29,16 +29,19 @@ let letter = '';
 const asideMenu = document.querySelector(".hamburger-menu")
 const asideLinks = asideMenu.querySelectorAll("a");
 const hamburgerInput = document.querySelector(".menu-btn");
+const overlayBlur = document.querySelector(".overlay-blur");
 
 function closeAside() {
   hamburgerInput.checked = false;
-  body.classList.remove("blur")
-}  
+  body.classList.remove("blur");
+  overlayBlur.style.setProperty("visibility", "hidden");
+};  
 
 function blur() {
   if (hamburgerInput.checked === true) {
     console.log("here");
-    body.classList.add("blur")
+    body.classList.add("blur");
+    overlayBlur.style.setProperty("visibility", "visible");
   } else {
     closeAside()
   }
