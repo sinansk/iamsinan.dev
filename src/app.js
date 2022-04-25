@@ -29,19 +29,16 @@ let letter = '';
 const asideMenu = document.querySelector(".hamburger-menu")
 const asideLinks = asideMenu.querySelectorAll("a");
 const hamburgerInput = document.querySelector(".menu-btn");
-const overlayBlur = document.querySelector(".overlay-blur");
 
 function closeAside() {
   hamburgerInput.checked = false;
   body.classList.remove("lock-scroll");
-  overlayBlur.style.setProperty("visibility", "hidden");
-};  
+}  
 
-function blur() {
+function lockScroll() {
   if (hamburgerInput.checked === true) {
     console.log("here");
     body.classList.add("lock-scroll");
-    overlayBlur.style.setProperty("visibility", "visible");
   } else {
     closeAside()
   }
@@ -53,7 +50,7 @@ window.addEventListener("click", (e) => {
     closeAside()
   } 
 });
-hamburgerInput.addEventListener("input", blur);
+hamburgerInput.addEventListener("input", lockScroll);
 /**SHOW SCROLL BUTTON**/
 const scrollBtn = document.querySelector(".scroll-btn");
 

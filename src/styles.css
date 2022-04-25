@@ -125,6 +125,7 @@ body.light .scroll-btn {
     brightness(95%) contrast(88%);
 }
 
+
 body {
   background-color: var(--color-bg);
   transition: 400ms all;
@@ -139,6 +140,10 @@ body {
 }
 body.lock-scroll {
   overflow-y: hidden;
+}
+
+body.lock-scroll .overlay-blur {
+  visibility: visible;
 }
 
 ul {
@@ -378,6 +383,7 @@ aside ul li a:active aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: flex-start;
   min-height: calc(100vh - var(--nav-height));
 }
@@ -409,6 +415,7 @@ aside ul li a:active aside {
   padding: 1.25rem 1.75rem;
   margin-top: 1rem;
   font-size: var(--font-sm);
+  display: inline-block;
 }
 .hero-btn,
 .resume {
@@ -468,6 +475,7 @@ aside ul li a:active aside {
   color: var(--green) !important;
   text-decoration: none;
 }
+
 .about-me a::after,
 .project-description a::after {
   content: "";
@@ -660,7 +668,6 @@ aside ul li a:active aside {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  align-items: stretch;
   font-family: var(--font-mono);
   font-size: var(--font-sm);
 }
@@ -673,6 +680,7 @@ aside ul li a:active aside {
   list-style: none;
   gap: 10px;
 }
+
 .links {
   font-size: var(--font-md);
 }
@@ -717,7 +725,7 @@ aside ul li a:active aside {
   display: block;
 }
 .contact > * {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .mail-icon {
   color: var(--heading-primary);
@@ -798,6 +806,9 @@ aside ul li a:active aside {
 @media (max-width: 1024px) {
   .nav-menu {
     justify-content: center;
+  }
+  nav {
+    padding: 0 2%;
   }
   .main-container {
     margin: 0 2%;
