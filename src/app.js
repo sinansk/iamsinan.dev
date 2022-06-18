@@ -1,7 +1,7 @@
 /**HEADING ANIMATION***/
 
 const typing = document.querySelector(".typing");
-const texts = ['Jr. Frontend Developer', 'Mechanical Engineer', 'lifelong learner'];
+const texts = ['Frontend Developer', 'Mechanical Engineer', 'lifelong learner'];
 let word = 0; 
 let letterIndex = 0; 
 let currentText = ''; 
