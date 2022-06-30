@@ -9,25 +9,29 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M495KG75CV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-M495KG75CV');
     </script>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(88427618, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/88427618" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/88427618" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
     <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
@@ -120,13 +124,52 @@
                     </p>
                 </div>
                 <div class="img-container">
-                    <img class="about-img" src="./src/images/personal-img.jpg" alt="personl-img" />
+                    <img class="about-img" src="./src/images/preferences.svg" alt="personl-img" />
                 </div>
             </div>
         </section>
         <section id="projects" class="projects">
             <h2 class="section-heading">Some Things I've Done</h2>
             <ul class="projects-list">
+                <li>
+                    <div class="project-container">
+                        <div class="project-image">
+                            <a href="https://bodygoal.netlify.app/" target="_blank"
+                                title="React Body Calculator App"><img src="./src/images/bodygoal-app.JPG"
+                                    alt="bodygoal-app" /></a>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                <a href="https://bodygoal.netlify.app/" target="_blank">React Body Calculator App</a>
+                            </h3>
+                            <p class="project-description">You can learn your bodytype, your ideal weight according as
+                                body type, daily calorie requirement for your body goal and your ideal body measurements
+                                by your info.
+                                Some of data coming from <a
+                                    href="https://rapidapi.com/malaaddincelik/api/fitness-calculator/details">API</a>,
+                                some of data calculated manually. I am planning to add membership option which will help
+                                you to track your body stats and gives you some tips!
+                                I used Tailwind for styling and Redux Toolkit for state management. It is deployed on
+                                <a href="https://bodygoal.netlify.app/" target="_blank">Netlify</a>.
+                            </p>
+                            <div class="project-links">
+                                <ul class="project-tags">
+                                    <li>ReactJs</li>
+                                    <li>Redux Toolkit</li>
+                                    <li>Tailwind</li>
+                                    <li>RapidApi</li>
+                                </ul>
+                                <div class="links">
+                                    <a href="https://github.com/sinansk/react-weight-tracker-by-body-type"
+                                        target="_blank"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://bodygoal.netlify.app/" target="_blank"
+                                        title="React Body Calculator App"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li>
                     <div class="project-container">
                         <div class="project-image">
@@ -147,7 +190,7 @@
                                 am going
                                 to add new features such as deleting account and admin dashboard! I deployed backend on
                                 <a href="https://dashboard.heroku.com/" target="_blank">Heroku</a>, and frontend on
-                                <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+                                <a href="https://my-fav-shop.netlify.app/" target="_blank">Netlify</a>.
                             </p>
                             <div class="project-links">
                                 <ul class="project-tags">
