@@ -1,2 +1,2 @@
-# sinans.dev  
-https://sinans.dev/
+# iamsinan.dev  
+https://iamsinan.dev/
