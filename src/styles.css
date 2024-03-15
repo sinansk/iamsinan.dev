@@ -753,6 +753,26 @@ aside ul li a:active aside {
   opacity: 0.8;
 }
 
+.whatsapp {
+  color: #25d366;
+  position: fixed;
+  right: 10px;
+  bottom: 7.25rem;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 4.25rem;
+}
+.whatsapp:hover {
+  color: #128c7e;
+  opacity: 0.8;
+}
+.whatsapp:visited {
+  color: #25d366;
+}
+.whatsapp:focus {
+  color: #25d366;
+}
+
 .darkbtn .checkbox {
   opacity: 0;
   position: absolute;
